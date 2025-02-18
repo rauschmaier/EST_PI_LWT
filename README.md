@@ -19,7 +19,7 @@ Installiere die benötigten Python-Pakete auf deinem Raspberry Pi mit:
 
 ```bash
 sudo apt update
-sudo apt install python3-paho-mqtt python3-flask
+sudo apt install python3-paho-mqtt
 ```
 ### 3. Anlegen des Python-Skripts
 Speichern Sie das Python-Skript m̀qtt.py`auf dem PI
