@@ -34,20 +34,22 @@ Um `mqtt.py' automatisch beim Start des Raspberry Pi im Hintergrund auszuführen
    ```
 2. Füge den folgenden Inhalt in die Datei ein:
    ```ini
-     [Unit]
-    Description=MQTT Client für Raspberry Pi Status
-    After=network.target
-    
-    [Service]
-    ExecStart=/usr/bin/python3 /path/to/your/mqtt.py
-    WorkingDirectory=/path/to/your/
-    User=pi
-    Restart=always
-    StandardOutput=inherit
-    StandardError=inherit
-    
-    [Install]
-    WantedBy=multi-user.target
+      [Unit]
+      Description=MQTT Client für Raspberry Pi Status
+      After=network-online.target
+      Wants=network-online.target
+      
+      [Service]
+      ExecStart=/usr/bin/python3 /path/to/your/mqtt.py
+      WorkingDirectory=/path/to/your/
+      User=pi
+      Restart=always
+      RestartSec=10
+      StandardOutput=inherit
+      StandardError=inherit
+      
+      [Install]
+      WantedBy=multi-user.target
    ```
    - Ersetze `/path/to/your/mqtt.py` mit dem tatsächlichen Pfad zu deiner mqtt.py-Datei.
 Stelle sicher, dass der Benutzer pi über die notwendigen Berechtigungen verfügt.
