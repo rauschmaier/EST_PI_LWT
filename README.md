@@ -65,4 +65,4 @@ Stelle sicher, dass der Benutzer pi über die notwendigen Berechtigungen verfüg
   ```
 ### 4. Zugriff auf die Status-Seite
 
-Nach dem Start des Servers kannst du die Status-Seite im Schulnetz unter 10.30.0.90:3000` erreichen, die die Daten der Raspberry Pi-Geräte in Echtzeit anzeigt. Beachte, dass der PI hiezu ebenfalls im Schulnetz sein muss.
+Nach dem Start des Servers kannst du die Status-Seite im Schulnetz unter `http://10.30.0.90:3000` erreichen. Die Website stellt die Daten der Raspberry Pi-Geräte in Echtzeit dar. Beachte, dass der PI hiezu ebenfalls im Schulnetz sein muss.
