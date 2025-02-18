@@ -49,12 +49,12 @@ Um `mqtt.py' automatisch beim Start des Raspberry Pi im Hintergrund auszuführen
     [Install]
     WantedBy=multi-user.target
    ```
-   - Ersetze `/path/to/your/mqtt.py mit dem tatsächlichen Pfad zu deiner mqtt.py-Datei.
+   - Ersetze `/path/to/your/mqtt.py` mit dem tatsächlichen Pfad zu deiner mqtt.py-Datei.
 Stelle sicher, dass der Benutzer pi über die notwendigen Berechtigungen verfügt.
 3. Lade die Service-Dateien neu, um den neuen Service zu registrieren.
   ```bash
   sudo systemctl daemon-reload
-  ``
+  ```
 4. Aktiviere den Service, damit er beim Booten automatisch startet.
   ```bash
   sudo systemctl enable mqtt-client.service
