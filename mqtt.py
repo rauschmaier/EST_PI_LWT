@@ -21,10 +21,10 @@ def get_local_ip():
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
-    status_msg = f"Online|{get_ip()}"
+    status_msg = f"Online|{get_local_ip()}"
     client.publish(TOPIC_STATUS, status_msg, retain=True)
 
-client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION1, client_id=CLIENT_ID)
+client = mqtt.Client(client_id=CLIENT_ID)
 client.on_connect = on_connect
 client.will_set(TOPIC_LWT, "Offline|Unknown", qos=1, retain=True)  # LWT enthält "Offline" + keine IP
 
